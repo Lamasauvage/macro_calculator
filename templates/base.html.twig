@@ -1,0 +1,15 @@
+{% block body %}
+    <h1>Calculateur de Macros</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+    {% if result is defined %}
+        <h2>Apport journalier nécessaire</h2>
+        <p>Calories : {{ result.calories|number_format(0, '', '') }}</p>
+        <p>Protéines : {{ result.protein|number_format(0) }}g</p>
+        <p>Lipides : {{ result.fats|number_format(0) }}g</p>
+        <p>Glucides : {{ result.carbs|number_format(0) }}g</p>
+    {% endif %}
+{% endblock %}
